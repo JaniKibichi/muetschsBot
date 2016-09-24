@@ -7,6 +7,8 @@ var unirest = require('unirest');
 var BASE_URL ="https://api.telegram.org/bot<token>/";
 var POLLING_URL = BASE_URL + "getUpdates?offset=:offset:&timeout=60";
 var SEND_MESSAGE_URL = BASE_URL + "sendMessage";
+var SEND_PHOTO_URL = BASE_URL + "sendPhoto";
+var SEND_AUDIO_URL = BASE_URL + "sendAudio";
 
 /*create recursive polling function*/
 function poll(offset){
@@ -45,7 +47,7 @@ var dothis = function (message) {
 	       	 if (response.status == 200)
 	       	 	console.log("Successfully sent message to " + message.chat.id);
 	       });
-	       
+
 }
 
 /* the COMMANDS object */
